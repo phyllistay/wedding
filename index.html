@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Guest App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+ <!-- Step 0: Title Image at the top -->
+ <img src="find-your-table.png" alt="Find Your Table" id="titleImage">
+
+  <!-- Step 1: Select Side -->
+  <div id="step1" class="step">
+    <h2>Are you from the Groom or the Bride side?</h2>
+    <div class="cake-container">
+      <img src="cake.png" alt="Cake" class="cake">
+      <div class="toppers">
+        <img src="groom.png" alt="Groom Topper" id="groom" class="topper" data-side="Groom">
+        <img src="bride.png" alt="Bride Topper" id="bride" class="topper" data-side="Bride">
+      </div>
+    </div>    
+  </div>
+
+  <!-- Step 2: Enter Name -->
+  <div id="step2" class="step hidden">
+    <h2>What is your name?</h2>
+    <label for="guestName"></label>
+    <input type="text" id="guestName" name="guestName" required>
+    <button id="submitName">Submit</button>
+  </div>
+
+  <!-- Step 3: Display Table -->
+  <div id="step3" class="step hidden">
+    <!-- Header Image for Step 3 -->
+    <img src="your-table.png" alt="your table" id="yourTable">
+    <div id="tableNumber"></div>
+    <img src="map.png" alt="Map" id="map" class="map">
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
