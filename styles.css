@@ -13,7 +13,7 @@ body {
 
 h2 {
   font-family: 'Comfortaa', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 300; /*light*/
   color: #5a5a5a;
   text-align: center;
@@ -22,16 +22,17 @@ h2 {
 }
 
 #titleImage {
-  width: 90%; /* Scales with the screen size */
+  width: 90%; /* Adjusted to be responsive */
   max-width: 400px;
   margin-top: 20px;
 }
 
 #yourTable {
   width: 80%; /* Makes the image span the full width of the container */
-  max-width: 500px; /* Adjusts the max width for larger screens */
+  max-width: 300px; /* Adjusts the max width for larger screens */
   display: block; /* Ensures it is treated as a block-level element */
   margin: 0 auto 20px auto; /* Center the image and add space below it */
+  margin-top: 20px;
 }
 
 
@@ -64,18 +65,18 @@ h2 {
 /* Style for the toppers (bride and groom) */
 .toppers {
   position: absolute;
-  top: 30px;          /* Tweak the toppers up/down to sit on the cake */
+  top: 0px;          /* Tweak the toppers up/down to sit on the cake */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 0px;           /* Space between the bride and groom toppers */
-  align-items: baseline;
+  align-items: flex-end; /* Align to bottom to keep them at the same height */
 }
 
 /* Individual topper styles */
 .topper {
   max-width: 100px;
-  height: 170px;
+  height: 160px;
   cursor: pointer;
   border-radius: 0;
   border: 2px solid transparent;
@@ -87,15 +88,17 @@ h2 {
 }
 
 #map {
-  width: 450px;   /* Adjust the width to make the map smaller */
+  width: 90%;   /* Adjust the width to make the map smaller */
+  max-width: 450px;
   height: auto;   /* Maintain aspect ratio */
   display: block; /* Ensure it's displayed as a block element */
   margin: 0 auto; /* Center the map */
 }
 
+
 #tableNumber {
   font-family: 'Comfortaa', sans-serif;  /* Change to your preferred font */
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 300; /*light*/
   color: #5a5a5a;
   text-align: center; /* Center align the text */
