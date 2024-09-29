@@ -1,6 +1,5 @@
 const guests = [
-  { names: ["John Doe"], side: "Groom", table: 5 },
-  { names: ["Yina", "Yina Chow"], side: "Bride", table: "Table 3 (T3)" },
+  { names: ["Yam"], side: "Groom", table: "the VIP table" },
   { names: ["Phyllis"], side: "Bride", table: "the VIP table" },
   { names: ["Eileen", "Swee Lian", "Tan Swee Lian", "Eileen Tan"], side: "Bride", table: "the VIP table" },
   { names: ["Derek", "Beng Ngiap", "Derek Tay"], side: "Bride", table: "the VIP table" },
@@ -10,7 +9,11 @@ const guests = [
   { names: ["Vivien", "Vivien Tan"], side: "Bride", table: "the VIP table" },
   { names: ["Ivy", "Ivy Tan"], side: "Bride", table: "the VIP table" },
   { names: ["Kumar", "Uthaia Kumaran", "Uthaia"], side: "Bride", table: "the VIP table" },
-  { names: ["Bok Lan", "Tay Bok Lan"], side: "Bride", table: "the VIP table" }
+  { names: ["Bok Lan", "Tay Bok Lan"], side: "Bride", table: "the VIP table" },
+  { names: ["Yina", "Yina Chow"], side: "Bride", table: "Table 3 (T3)" },
+
+
+
 ];
 
 // Step 1: User selects Bride or Groom
@@ -42,11 +45,15 @@ document.getElementById('submitName').addEventListener('click', function() {
   // Find guest by name (match with any name in the array) and side
   const guest = guests.find(guest => guest.names.some(guestName => guestName.toLowerCase() === name) && guest.side === selectedSide);
   const tableNumberDiv = document.getElementById('tableNumber');
+  const goBackButton = document.getElementById('goBack');
 
   if (guest) {
     tableNumberDiv.innerHTML = `You are seated at ${guest.table}`;
+    goBackButton.classList.add('hidden');  // Hide the Go Back button if name is valid
+
   } else {
     tableNumberDiv.innerHTML = 'Oops we can\'t find your records...<br>Maybe try with another name we know you by? <br><br>Else, find your seating at the registration table :)';
+    goBackButton.classList.remove('hidden');  // Show the Go Back button
   }
 
   document.getElementById('titleImage').style.display = 'none';
@@ -55,4 +62,15 @@ document.getElementById('submitName').addEventListener('click', function() {
   document.getElementById('step2').classList.add('hidden');
   document.getElementById('step3').classList.remove('hidden');
 
+});
+
+// Add an event listener to the Go Back button
+document.getElementById('goBack').addEventListener('click', function() {
+  // Hide Step 3 and show Step 1
+  document.getElementById('step3').classList.add('hidden');
+  document.getElementById('step1').classList.remove('hidden');
+  document.getElementById('titleImage').style.display = 'block';
+
+  // Optionally clear the input fields or reset other variables if needed
+  document.getElementById('guestName').value = '';  // Clear the name input field
 });
