@@ -51,6 +51,8 @@ h2 {
 .cake-container {
   position: relative;  /* Allows absolute positioning of child elements */
   width: 80%; /* Make the cake responsive */
+  max-width: 450px;
+  height: auto;   /* Maintain aspect ratio */
   margin: 0 auto;      /* Center the cake on the page */
   padding-top: 0;      /* Remove any padding above the cake */
 }
@@ -65,7 +67,7 @@ h2 {
 /* Style for the toppers (bride and groom) */
 .toppers {
   position: absolute;
-  top: 0px;          /* Tweak the toppers up/down to sit on the cake */
+  top: 5px;          /* Tweak the toppers up/down to sit on the cake */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
