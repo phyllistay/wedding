@@ -91,7 +91,7 @@ h2 {
 
 #map {
   width: 90%;   /* Adjust the width to make the map smaller */
-  max-width: 450px;
+  max-width: 400px;
   height: auto;   /* Maintain aspect ratio */
   display: block; /* Ensure it's displayed as a block element */
   margin: 0 auto; /* Center the map */
